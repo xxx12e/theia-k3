@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv*/
+
+# Training artifacts (regenerable — see README)
+multi_seed_results/
+visualizations/
+*.pth
+*.pt
+*.png
+*.log
+overnight_log*/
+
+# IDE
+.idea/
+.vscode/

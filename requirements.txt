@@ -1,0 +1,12 @@
+# THEIA code release — pinned to the exact environment used for the paper's runs.
+# Python 3.12.10, CUDA 12.8, NVIDIA RTX 5080 (16 GB).
+#
+# torch was a cu128 nightly build. Install it from the PyTorch nightly index:
+#   pip install --pre "torch==2.12.0.dev20260329+cu128" --index-url https://download.pytorch.org/whl/nightly/cu128
+# Any torch >= 2.4 with CUDA support should reproduce the results; the exact
+# nightly is pinned here only for bit-level provenance.
+torch==2.12.0.dev20260329+cu128
+numpy==2.4.3
+tqdm==4.67.3
+scikit-learn==1.8.0
+matplotlib==3.10.8

@@ -1,0 +1,94 @@
+{
+  "data_seed": 999,
+  "n": 50000,
+  "P_UNKNOWN": 0.15,
+  "n_atomic_flags": 4,
+  "flag_names": [
+    "a_unknown",
+    "b_unknown",
+    "d_unknown",
+    "s_unknown"
+  ],
+  "marginal": {
+    "P(HU=0)": 0.52544,
+    "P(HU=1)": 0.47456,
+    "P(VU=F)": 0.26586,
+    "P(VU=T)": 0.33148,
+    "P(VU=U)": 0.40266
+  },
+  "joint_VU_HU": {
+    "VU=F": {
+      "HU=0": 0.23896,
+      "HU=1": 0.0269,
+      "row_total": 0.26586
+    },
+    "VU=T": {
+      "HU=0": 0.28648,
+      "HU=1": 0.045,
+      "row_total": 0.33148
+    },
+    "VU=U": {
+      "HU=0": 0.0,
+      "HU=1": 0.40266,
+      "row_total": 0.40266
+    }
+  },
+  "conditionals": {
+    "P(VU=v|HU=0)": {
+      "F": 0.45478075517661387,
+      "T": 0.5452192448233861,
+      "U": 0.0
+    },
+    "P(VU=v|HU=1)": {
+      "F": 0.056684086311530685,
+      "T": 0.09482467970330412,
+      "U": 0.8484912339851652
+    },
+    "P(VU=F|VU!=U)": 0.44507315766565103,
+    "P(VU=T|VU!=U)": 0.554926842334349
+  },
+  "reference_points": {
+    "has_unknown_oracle": {
+      "value": 0.6891400000000001,
+      "value_pct": 68.91400000000002,
+      "argmax_HU0": "T",
+      "argmax_HU1": "U",
+      "formula": "P(HU=0)*max_v P(VU=v|HU=0) + P(HU=1)*max_v P(VU=v|HU=1)"
+    },
+    "vu_u_oracle": {
+      "value": 0.73414,
+      "value_pct": 73.414,
+      "argmax_neU": "T",
+      "formula": "P(VU=U)*1.0 + P(VU!=U)*max_v\u2208{F,T} P(VU=v|VU!=U)",
+      "note": "paper \"74% uncertainty-only reference\" equivalent under 4-flag generator"
+    }
+  },
+  "per_boundary_margin": {
+    "arith": {
+      "mlp_d6_5seed_mean_pct": 61.272,
+      "mlp_d6_5seed_std_pct": 0.045,
+      "margin_to_has_unknown_oracle_pp": -7.642000000000017,
+      "margin_to_vu_u_oracle_pp": -12.142000000000003
+    },
+    "order": {
+      "mlp_d6_5seed_mean_pct": 67.166,
+      "mlp_d6_5seed_std_pct": 0.06,
+      "margin_to_has_unknown_oracle_pp": -1.7480000000000189,
+      "margin_to_vu_u_oracle_pp": -6.248000000000005
+    },
+    "set": {
+      "mlp_d6_5seed_mean_pct": 69.916,
+      "mlp_d6_5seed_std_pct": 0.118,
+      "margin_to_has_unknown_oracle_pp": 1.0019999999999811,
+      "margin_to_vu_u_oracle_pp": -3.4980000000000047
+    },
+    "logic": {
+      "mlp_d6_5seed_mean_pct": 99.916,
+      "mlp_d6_5seed_std_pct": 0.04,
+      "margin_to_has_unknown_oracle_pp": 31.00199999999998,
+      "margin_to_vu_u_oracle_pp": 26.501999999999995
+    }
+  },
+  "source": "probe_cleansplit w=256 random-split val-best-epoch audit",
+  "protocol": "canonical: w=256, random 60/20/20, val-best-epoch, MLP d=6"
+}

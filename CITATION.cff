@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "THEIA: Learning Complete Kleene Three-Valued Logic in a Pure-Neural Modular Architecture"
+authors:
+  - family-names: "Li"
+    given-names: "Augustus Haoyang"
+    affiliation: "Irvine Valley College"
+date-released: 2026-04-20
+license: MIT
+repository-code: "https://github.com/xxx12e/theia-k3"
+preferred-citation:
+  type: article
+  title: "THEIA: Learning Complete Kleene Three-Valued Logic in a Pure-Neural Modular Architecture"
+  authors:
+    - family-names: "Li"
+      given-names: "Augustus Haoyang"
+      affiliation: "Irvine Valley College"
+  year: 2026
+  journal: "arXiv preprint"
+  url: "https://arxiv.org/abs/2604.11284"
+  identifiers:
+    - type: other
+      value: "arXiv:2604.11284"
